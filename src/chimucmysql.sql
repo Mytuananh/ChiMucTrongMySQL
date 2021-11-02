@@ -23,3 +23,11 @@ END //
 DELIMITER ;
 
 call findAllCustomers();
+
+DELIMITER //
+create procedure getCusById(in cusNum int(11))
+begin
+    select * from customers where customerName = cusNum;
+end //
+DELIMITER ;
+call getCusById(175);
